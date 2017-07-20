@@ -9,12 +9,13 @@ script:
 - mkdir build
 - pdflatex -output-directory build main.tex
 before_deploy:
-- git checkout -b master
 - git fetch --tags
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: cpsAuG3fbWA4L8E3WDJMWvNg1/dY8kbyVqSU6jn39yyj9yawbcY72KJEEEPHkF7iESlc37HgOzJVGhGBeYana7TOWKfuiKiNag57Hf9HiGrQsSYiMoA2NMkLp6xisKrcuINs+quNa4mtUqgoraGNpS8nbRnBNW3txYQO31X+jGWossGab+YH+ZxlrwUpPYPYG/6XF5Ha6+CcHxaGDTELXDruXo8vCZZuC9SrWXXd5suLnYSUJJgFmTdQ/T6jiJlsNjXdosdffGFaZZ9EakPTmrjLxPisYSRVL71tiEdLgz2B0xdDoxBKveOJjRPxjgMaqXrX79vhqmJpJgnVFWXX2Ea9AcWny2p1u37+cXaZ300t6OzD0fh2+y8d7n11eCd5dUsi2fkwLM/Usglv6R6Jemg9C2bOtXofCpTIxHZZlu7nZ7KKjZHCMrFTYoAj3IXjnNbAloN12bmdssUaiGO1R+dNt+2bBOyDdrzSGR7j8wfdVWeU0ZuzmV967YlL8GjTxTC5IffAgsHI3eGR91VklnS0n6XKgtXT8e47uJaHeiQ7U2Zl6pUBG903wMezx5txmOlmlTme7hb9i0yE0AhpQS+AQiloJdG+tFHIMdGd/thy9jDLgJNKqlqWSWXNtNLbQpMcZrc40BNzfh7VVFKjcilNiSZoGJKsaiYET61qMvo=
   file: main.tex
   on:
     repo: aliceblack/LatexTravis
+    tags: true
