@@ -14,7 +14,7 @@ before_deploy:
 deploy:
   skip_cleanup: true
   provider: releases
-file: main.tex
+  file: main.tex
   on:
     repo: aliceblack/LatexTravis
     tags: true
