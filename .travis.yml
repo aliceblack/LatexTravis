@@ -16,6 +16,6 @@ deploy:
   provider: releases
 file: main.tex
   on:
-    repo: aliceblack/LatexTravisBoilerplate
+    repo: aliceblack/LatexTravis
     tags: true
     all_branches: true
