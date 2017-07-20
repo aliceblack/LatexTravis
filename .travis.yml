@@ -1,0 +1,11 @@
+dist: trusty
+sudo: true
+before_deploy:
+- git fetch --tags
+deploy:
+  provider: releases
+  file: main.tex
+  skip_cleanup: true
+  on:
+    repo: aliceblack/LatexTravis
+    tags: true
